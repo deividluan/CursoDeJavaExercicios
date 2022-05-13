@@ -1,4 +1,4 @@
-package PacoteExercicio;
+package ExercicioTeste;
 
 import java.util.Scanner;
 
@@ -7,27 +7,32 @@ public class ExercicioWhile12 {
 		
 		Scanner sc = new Scanner (System.in);
 		
-		int numero = 1;
+		int numero = 0;
 		int cont = 0;
 		int maior = 0;
 		int menor = 0;
 		
-		while (numero > 0) {
-			System.out.print("Digite um numero (pode ser negativo) : ");
+		while (numero >= 0) {
+			System.out.print("Digite um numero (negativo para parar) : ");
 			numero = sc.nextInt();
+			
+			if (numero < 0) {
+				break;
+			}
 			
 			if (cont == 0) {
 				maior = numero;
 				menor = numero;
 			}
 			else {
-				if (numero > maior) {
+				if (maior < numero) {
 					maior = numero;
 				}
-				if (numero < menor) {
+				if (menor > numero) {
 					menor = numero;
 				}
 			}
+			cont ++;
 		}
 		
 		System.out.println("Maior numero: " + maior);
